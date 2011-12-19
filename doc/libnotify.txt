@@ -1,0 +1,107 @@
+*libnotify.txt*   Simple wrapper for notify-send
+
+Author: Andreas Müller <http://0x7.ch>
+License: Same terms as Vim itself (see |license|)
+Version: 0.1
+
+
+==============================================================================
+Contents                                                  *libnotify-contents*
+
+   1. Intro.................................|libnotify-introduction|
+   2. Functions.............................|libnotify-functions|
+   3. Options...............................|libnotify-options|
+   4. About.................................|libnotify-about|
+   5. Changelog.............................|libnotify-changelog|
+
+==============================================================================
+1. Intro                                              *libnotify-introduction*
+
+This plugin provides three wrapper functions to send notifications using
+libnotify resp. notify-send.
+
+==============================================================================
+2. Functions                                             *libnotify-functions*
+
+Notify({title}, ...)                                                *Notify()*
+                Display a general notification, using the given {title}. If
+                any additional arguments are given, they are used as the
+                message body.
+
+NotifySuccess({title}, ...)                                  *NotifySuccess()*
+                Display a success notification, using the given {title}. If
+                any additional arguments are given, they are used as the
+                message body.
+
+                The only difference to general notifications is that a
+                different icon is used.
+
+NotifyError({title}, ...)                                      *NotifyError()*
+                Display an error notification, using the given {title}. If any
+                additional arguments are given, they are used as the message
+                body.
+
+                The only difference to general notifications is that a
+                different icon is used.
+
+==============================================================================
+3. Options                                                 *libnotify-options*
+
+------------------------------------------------------------------------------
+3.1 Options summary                                *libnotify-options-summary*
+
+|'g:loaded_libnotify'|      Prevents loading of the plugin.
+
+|'g:notify_send_cmd'|       Command used for sending notifications.
+
+|'g:notify_default_icon'|   Default icon for notifications.
+
+|'g:notify_success_icon'|   Icon for success notifications.
+
+|'g:notify_error_icon'|     Icon for error notifications.
+
+
+3.2 Option details                                 *libnotify-options-details*
+------------------------------------------------------------------------------
+
+                                                        *'g:loaded_libnotify'*
+Can be set to 1 to turn the plugin off: >
+    let g:loaded_libnotify=1
+<
+
+                                                         *'g:notify_send_cmd'*
+Default: 'notify-send'
+
+Command used to send notifications.
+
+                                                     *'g:notify_default_icon'*
+Default: '/usr/share/pixmaps/vim.svg' or '/usr/share/pixmaps/gvim.xpm' if the
+former doesn't exist.
+
+Icon to use for general notifications.
+
+                                                     *'g:notify_success_icon'*
+Default: '/usr/share/icons/gnome/48x48/emblems/emblem-default.png'
+
+Icon to use for success notifications.
+
+                                                       *'g:notify_error_icon'*
+Default: '/usr/share/icons/gnome/48x48/status/error.png'
+
+Icon to use for error notifications.
+
+==============================================================================
+4. About                                                     *libnotify-about*
+
+You can get the latest version or send feedback on GitHub:
+
+http://github.com/andrmuel/vim-libnotify
+
+==============================================================================
+5. Changelog                                             *libnotify-changelog*
+
+0.1
+    - initial release
+
+
+ vim:tw=78:et:ft=help:norl:
